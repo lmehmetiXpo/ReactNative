@@ -1,13 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const MenuScreen=(props)=> {
-    console.log(props);
-    return(
+const ListScreen=()=> {
     <View>
-        <Text style={styles.text}>Welcome to Menu Screen</Text>
+        <Text style={styles.text}>Welcome to List Screen</Text>
     </View>
-    );
 }
 
 const styles = StyleSheet.create({
@@ -18,4 +15,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default MenuScreen;
+export default ListScreen;
