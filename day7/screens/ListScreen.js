@@ -4,6 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 const ListScreen=()=> {
     <View>
         <Text style={styles.text}>Welcome to List Screen</Text>
+        
     </View>
 }
 

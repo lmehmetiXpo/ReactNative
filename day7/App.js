@@ -1,30 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { createAppContainer } from 'react-navigation-stack';
-import { createStackNavigator } from 'react-navigation'
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import MenuScreen from './screens/MenuScreen';
 import ExerciseScreen from './screens/ExerciseScreen';
-import { Button } from 'react-native-web';
 import ButtonScreen from './screens/ButtonScreen';
 import ListScreen from './screens/ListScreen';
-import MainScreen from './screens/MainScreen'
 
 
-const navigator = createStackNavigator(
-  {
-    Main: MenuScreen,
-    Exercise: ExerciseScreen,
-    Button: ButtonScreen,
-    List: ListScreen,
-    // Menu: MenuScreen
-  },
-  
-  {
-    initialRouteName: "Menu",
-    dafaultNavigationOptions: {
-      title: "App"
-    }
-  }
-  
-);
-export default createAppContainer(navigator);
+const Stack = createStackNavigator();
+
+export default function App(){
+  return(
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Menu">
+          <Stack.Screen name= "Menu" component={MenuScreen} options={{title:'App'}}/>
+          <Stack.Screen name= "Exercise" component={ExerciseScreen}/>
+          <Stack.Screen name= "Button" component={ButtonScreen}/>
+          <Stack.Screen name= "ListScreen" component={ListScreen}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
